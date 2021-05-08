@@ -4,7 +4,7 @@ $(function(){
     $('.calc_form').submit(function(event){
         event.preventDefault();
         $.ajax({
-            url:     'http://testtast1/calc.php',
+            url:     'https://headday.github.io/calc.php',
             type:     'POST',
             dataType: 'html',
             data: $('.calc_form').serialize(),
