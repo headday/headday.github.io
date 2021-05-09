@@ -30,7 +30,7 @@ function calculate(){
 
         $mounth++;
     }
-    echo json_encode($summn);
+    echo json_encode(floor($summn));
 }
 calculate();
 ?>

@@ -39,18 +39,23 @@
                 <h1 class="calc_title">Калькулятор</h1>
                 <form class="calc_form"  id="calc_form" method="POST">
                     <div class="form_block">
-                        <label for="summ_date">Дата оформления вклада</label>
-                        <input type="text" id="datepicker" name="summ_date">
+                        <label class="form_block_label" for="summ_date">Дата оформления вклада</label>
+                        <input type="text" id="datepicker" name="summ_date" required>
                     </div>
-                    <div class="form_block"> 
-                        <label for="summ">Сумма вклада</label>
-                        <input type="number" value="10000" name="summ" id="test" min="1000" max="3000000">
+                    <div class="form_block form_block_with_range"> 
+                        <label class="form_block_label" for="summ">Сумма вклада</label>
+                        <input type="number" value="1000"  name="summ" id="summ" min="1000" max="3000000">
+                        <div class="range_component">
+                            <input class="range_block range_block_on_summ" type="range" name="summ" id="test" min="1000" max="3000000" step="100">
+                            <div class="values_block">
+                                <div class="min_value">1000 рублей</div>
+                                <div class="max_value">3000000</div>
+
+                            </div>
+                        </div>
                     </div>
-                   <!--  <div class="form_block"> 
-                        <input class="range_block" type="range" name="summ" id="test" min="1000" max="3000000">
-                    </div> -->
                     <div class="form_block">
-                        <label for="summ_time">Срок вклада</label>
+                        <label class="form_block_label" for="summ_time">Срок вклада</label>
                         <select name="summ_time" id="summ_time">
                             <option value="1">1 год</option>
                             <option value="2">2 года</option>
@@ -60,30 +65,40 @@
                         </select>
                     </div>
                     <div class="form_block ">
-                        <label for="">Пополнение вклада</label>
+                        <label class="form_block_label" for="">Пополнение вклада</label>
                         <div class="radio">
-                            <input type="radio" value="false" name="radio_contribution" checked>
+                            <input type="radio" value="false" name="radio_contribution" checked id="contribution_remove">
                             <label class="radio_label" for="radio_contribution">Нет</label>
                             <input type="radio" value="true" name="radio_contribution" id="contribution_add"> 
                             <label class="radio_label" for="radio_contribution">Да</label>
                         </div>
                     </div>
                     <div class="form_block" id="summ_add">
-                        <label for="summadd">Сумма пополненя вклада</label>
-                        <input type="number" name="summadd" min="1000" max="3000000" value="10000">
+                        <label class="form_block_label" for="summadd">Сумма пополненя вклада</label>
+                        <input type="number" name="summadd" id="summadd" min="1000" max="3000000" value="10000">
+                        <div class="range_component">
+                            <input class="range_block range_block_on_summadd" type="range" name="summ" id="test" min="1000" max="3000000" step="1000">
+                            <div class="values_block">
+                                <div class="min_value">1000 рублей</div>
+                                <div class="max_value">3000000</div>
+
+                            </div>
+                        </div>
                     </div>
                     
                     <div class="result">
                         <input class="result_btn" type="submit" value="Расчитать">
-                        <div class="result_title">
-                            Результат
-                        </div>
-                        <div class="result_span">
-                            10 250
-                        </div>
-                        <div class="result_span">
-                            руб.
-                        </div>
+                            <div class="result_block">
+                                <span class="result_title">
+                                    Результат
+                                </span>
+                                <span class="result_span">
+                                
+                                </span>
+                                <span class="result_currency">
+                                    руб.
+                                </span>
+                            </div>
                     </div>
                 </form>
             </section>
